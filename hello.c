@@ -1,11 +1,3 @@
-# G
-G - Implementing the J prototype in rust
-
-Hm.... looks like the C will compile but the binary won't work. So figuring out what's going on here is a bigger task than I had anticipated. Something for the future...
-
-This will be a re-implementation of Arthur Whitney's [first prototype of J](http://www.jsoftware.com/jwiki/Essays/Incunabulum):
-
-``` c
 typedef char C;typedef long I;
 typedef struct a{I t,r,d[3],p[2];}*A;
 #define P printf
@@ -48,10 +40,3 @@ I *wd(s)C *s;{I a,n=strlen(s),*e=ma(n+1);C c;
  DO(n,e[i]=(a=noun(c=s[i]))?a:(a=verb(c))?a:c);e[n]=0;R e;}
 
 main(){C s[99];while(gets(s))pr(ex(wd(s)));}
-```
-
-This was done in an afternoon and was
-
-> a working fragment that provided only one function (+), one operator (/), one-letter names, and arrays limited to ranks 0 and 1, but did provide for boxed arrays and for the use of the copula for assigning names to any entity
-
-http://www.jsoftware.com/papers/APLPersonalView.htm
